@@ -1,0 +1,109 @@
+{
+  "name": "TimeTracker",
+  "product_name": "Time Tracker",
+  "version": "1.1.0",
+  "description": "Track User Activity",
+  "main": "electron.js",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.windshieldhub.TimeTracker",
+    "linux": {
+      "publish": {
+        "provider": "github",
+        "owner": "Umair Shahid",
+        "repo": "timetraker-electron-reactjs",
+        "private": true,
+        "token": ""
+      }
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "public/assets/logo-icon.ico",
+      "publish": {
+        "provider": "s3"
+      }
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "private": true,
+      "owner": "Umair Shahid"
+    }
+  },
+  "nsis": {
+    "onClick": false,
+    "installerIcon": "public/assets/logo-icon.ico",
+    "uninstallerIcon": "public/assets/logo-icon.ico",
+    "uninstallDisplayName": "WSH-Tracker-Uninstaller",
+    "license": "license.md",
+    "allowToChangeInstallationDirectory": true
+  },
+  "author": "WindShieldhub",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "active-win": "^8.2.1",
+    "axios": "^1.6.8",
+    "electron": "^30.0.1",
+    "electron-is-dev": "^3.0.1",
+    "electron-rebuild": "^3.2.9",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^8.2.0",
+    "electron-webpack": "^2.8.2",
+    "find-process": "^1.4.7",
+    "font-awesome": "^4.7.0",
+    "react": "^18.2.0",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "robotjs": "^0.6.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "web-vitals": "^2.1.4",
+    "webpack": "~4.42.1",
+    "ws": "^8.16.0"
+  },
+  "dependencies": {
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/publisher-s3": "^7.4.0",
+    "active-win": "^8.2.1",
+    "axios": "^1.6.8",
+    "custom-electron-titlebar": "^4.2.8",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "electron-config": "^2.0.0",
+    "electron-notification": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^8.2.0",
+    "find-process": "^1.4.7",
+    "keytar": "^7.9.0",
+    "node-gyp": "^10.0.1",
+    "nodemon": "^3.1.0",
+    "robotjs": "^0.6.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "update-electron-app": "^3.0.0",
+    "ws": "^8.16.0"
+  }
+}
